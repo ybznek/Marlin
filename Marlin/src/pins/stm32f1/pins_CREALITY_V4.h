@@ -58,10 +58,12 @@
 //
 // Servos
 //
-#ifndef HAS_PIN_27_BOARD
-  #define SERVO0_PIN                        PB0   // BLTouch OUT
-#else
-  #define SERVO0_PIN                        PC6
+#ifndef SERVO0_PIN
+  #ifndef HAS_PIN_27_BOARD
+    #define SERVO0_PIN                      PB0   // BLTouch OUT
+  #else
+    #define SERVO0_PIN                      PC6
+  #endif
 #endif
 
 //
@@ -71,8 +73,10 @@
 #define Y_STOP_PIN                          PA6
 #define Z_STOP_PIN                          PA7
 
-#define Z_MIN_PROBE_PIN                     PB1   // BLTouch IN
-#define KILL_PIN Z_MIN_PROBE_PIN
+#ifndef Z_MIN_PROBE_PIN
+  #define Z_MIN_PROBE_PIN                   PB1   // BLTouch IN
+#endif
+
 //
 // Filament Runout Sensor
 //
@@ -130,8 +134,6 @@
 // Heaters / Fans
 //
 #define HEATER_0_PIN                        PA1   // HEATER1
-#define SPINDLE_LASER_ENA_PIN 			HEATER_0_PIN // spindle
-
 #define HEATER_BED_PIN                      PA2   // HOT BED
 
 #ifndef FAN_PIN
