@@ -11,17 +11,17 @@ git fetch marlin bugfix-2.0.x
 
 # merge changes
 git checkout bugfix-2.0.x
-git merge marlin/bugfix-2.0.x --no-edit
+git rebase marlin/bugfix-2.0.x
 
 # apply to multiple branches
 git checkout bugfix-2.0.x-cnc
-git merge bugfix-2.0.x --no-edit
+git rebase bugfix-2.0.x
 
 git checkout bugfix-2.0.x-endy
-git merge bugfix-2.0.x --no-edit
+git rebase bugfix-2.0.x
 
 git checkout bugfix-2.0.x-endy-junior
-git merge bugfix-2.0.x --no-edit
+git rebase bugfix-2.0.x
 
 
 # return to base branch
