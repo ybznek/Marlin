@@ -1,0 +1,1 @@
+docker run -d --restart unless-stopped -v /home/z/apps/octoprint:/octoprint --device=/dev/ttyACM0 -e ENABLE_MJPG_STREAMER=true -p 80:80 --name octoprint octoprint/octoprint
