@@ -6,6 +6,9 @@ set -e
 git remote | grep -q marlin || git remote add  marlin https://github.com/MarlinFirmware/Marlin.git
 
 
+# fetch changes
+git fetch marlin bugfix-2.0.x
+
 # merge changes
 git checkout bugfix-2.0.x
 git merge marlin/bugfix-2.0.x
