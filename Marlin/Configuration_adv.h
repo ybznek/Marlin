@@ -3611,7 +3611,7 @@
   #if PIN_EXISTS(BUTTON1)
     #define BUTTON1_HIT_STATE     LOW       // State of the triggered button. NC=LOW. NO=HIGH.
     #define BUTTON1_WHEN_PRINTING true     // Button allowed to trigger during printing?
-    #define BUTTON1_GCODE         "M112\nM118 Emergency STOP!"
+    #define BUTTON1_GCODE         "M84\nM5\nM118 Emergency STOP!\nM112"
     #define BUTTON1_DESC          "Emergency stop"  // Optional string to set the LCD status
   #endif
 
