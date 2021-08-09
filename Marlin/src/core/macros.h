@@ -399,7 +399,7 @@
     template <typename T, typename ... Args> struct first_type_of { typedef T type; };
     template <typename T> struct first_type_of<T> { typedef T type; };
   }
-  // C++11 solution using SFINAE to detect the existance of a member in a class at compile time.
+  // C++11 solution using SFINAE to detect the existence of a member in a class at compile time.
   // It creates a HasMember<Type> structure containing 'value' set to true if the member exists
   #define HAS_MEMBER_IMPL(Member) \
     namespace Private { \
@@ -442,7 +442,7 @@
       return contains(str, '/') ? findLastPos(findStringEnd(str), '/') : str;
     }
 
-    // Find the first occurence of a character in a string (or return the last position in the string)
+    // Find the first occurrence of a character in a string (or return the last position in the string)
     constexpr const char* findFirst(const char *str, const char ch) {
       return *str == ch || *str == 0 ? (str + 1) : findFirst(str + 1, ch);
     }
