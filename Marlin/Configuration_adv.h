@@ -2811,8 +2811,8 @@
   //#define  J_SLAVE_ADDRESS 0
   //#define  K_SLAVE_ADDRESS 0
   #define E0_SLAVE_ADDRESS 0
-  #define E1_SLAVE_ADDRESS 0
-  #define E2_SLAVE_ADDRESS 0
+  //#define E1_SLAVE_ADDRESS 0 // todoz: enable for another
+  //#define E2_SLAVE_ADDRESS 0 // todoz: enable for another
   //#define E3_SLAVE_ADDRESS 0
   //#define E4_SLAVE_ADDRESS 0
   //#define E5_SLAVE_ADDRESS 0
