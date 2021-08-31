@@ -680,7 +680,7 @@ private:
     static void M107();
   #endif
 
-  #if DISABLED(EMERGENCY_PARSER)
+  #if DISABLED(EMERGENCY_PARSER) || ENABLED(DOUBLE_EMERGENCY_PARSING)
     static void M108();
     static void M112();
     static void M410();

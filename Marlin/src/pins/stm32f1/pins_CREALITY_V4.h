@@ -70,26 +70,27 @@
 //
 // Limit Switches
 //
-#define X_STOP_PIN                          PA5
-#define X_STOP_PIN_PREV                          0
+#define X_STOP_PIN                          -1
+#define X_STOP_PIN_PREV                     PA5
 
-#define Y_STOP_PIN                          0
+#define Y_STOP_PIN                          -1
 #define Y_STOP_PIN_PREV                     PA6
 
-#define Z_STOP_PIN                          0
+#define Z_STOP_PIN                          -1
 #define Z_STOP_PIN_PREV                     PA7
 
-#ifndef Z_MIN_PROBE_PIN
-  #define Z_MIN_PROBE_PIN                   PB1   // BLTouch IN
-#endif
-#define KILL_PIN Z_MIN_PROBE_PIN
+//#ifndef Z_MIN_PROBE_PIN
+//  #define Z_MIN_PROBE_PIN                   PA7   // BLTouch IN
+//#endif
+
 
 //
 // Filament Runout Sensor
 //
-#ifndef FIL_RUNOUT_PIN
-  #define FIL_RUNOUT_PIN                    PA4   // "Pulled-high"
-#endif
+//#ifndef FIL_RUNOUT_PIN
+//  #define FIL_RUNOUT_PIN                    PA4   // "Pulled-high"
+//#endif
+#define FIL_RINOUT_PIN_PREV PA4
 
 //
 // Steppers

@@ -22,7 +22,7 @@
 
 #include "../../inc/MarlinConfig.h"
 
-#if DISABLED(EMERGENCY_PARSER)
+#if DISABLED(EMERGENCY_PARSER) || ENABLED(DOUBLE_EMERGENCY_PARSING)
 
 #include "../gcode.h"
 #include "../../MarlinCore.h" // for wait_for_heatup, kill, M112_KILL_STR

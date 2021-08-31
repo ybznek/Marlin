@@ -1875,7 +1875,7 @@
   #if ENABLED(DOUBLECLICK_FOR_Z_BABYSTEPPING)
     #define DOUBLECLICK_MAX_INTERVAL 1250   // Maximum interval between clicks, in milliseconds.
                                             // Note: Extra time may be added to mitigate controller latency.
-    #define MOVE_Z_WHEN_IDLE              // Jump to the move Z menu on doubleclick when printer is idle.
+    //#define MOVE_Z_WHEN_IDLE              // Jump to the move Z menu on doubleclick when printer is idle.
     #if ENABLED(MOVE_Z_WHEN_IDLE)
       #define MOVE_Z_IDLE_MULTIPLICATOR 1   // Multiply 1mm by this factor for the move step size.
     #endif
@@ -2064,7 +2064,7 @@
 #endif
 
 // G5 Bézier Curve Support with XYZE destination and IJPQ offsets
-//#define BEZIER_CURVE_SUPPORT        // Requires ~2666 bytes
+#define BEZIER_CURVE_SUPPORT        // Requires ~2666 bytes
 
 #if EITHER(ARC_SUPPORT, BEZIER_CURVE_SUPPORT)
   //#define CNC_WORKSPACE_PLANES      // Allow G2/G3/G5 to operate in XY, ZX, or YZ planes
@@ -3697,7 +3697,7 @@
 #endif
 
 
-#define KILL_PIN_STATE HIGH
+
 /**
  * Startup commands
  *
@@ -3789,11 +3789,12 @@
 #define CUSTOM_USER_BUTTONS
 #if ENABLED(CUSTOM_USER_BUTTONS)
   #define BUTTON1_PIN Z_STOP_PIN_PREV
+  #define DOUBLE_EMERGENCY_PARSING // for working of M112 via button
   #if PIN_EXISTS(BUTTON1)
     #define BUTTON1_HIT_STATE     LOW       // State of the triggered button. NC=LOW. NO=HIGH.
     #define BUTTON1_WHEN_PRINTING true     // Button allowed to trigger during printing?
     #define BUTTON1_GCODE         "M112"
-    //#define BUTTON1_DESC          "Emergency stop"  // Optional string to set the LCD status
+    #define BUTTON1_DESC          "Emergency stop"  // Optional string to set the LCD status
   #endif
 
   #define BUTTON2_PIN X_STOP_PIN_PREV
@@ -3809,7 +3810,15 @@
     #define BUTTON3_HIT_STATE     LOW
     #define BUTTON3_WHEN_PRINTING true
     #define BUTTON3_GCODE         "M290 Z-0.25"
-    #define BUTTON2_DESC          "Baby -"
+    #define BUTTON3_DESC          "Baby -"
+  #endif
+
+   #define BUTTON4_PIN FIL_RINOUT_PIN_PREV
+  #if PIN_EXISTS(BUTTON4)
+    #define BUTTON4_HIT_STATE     LOW       // State of the triggered button. NC=LOW. NO=HIGH.
+    #define BUTTON4_WHEN_PRINTING true     // Button allowed to trigger during printing?
+    #define BUTTON4_GCODE         "M290 Z-0.25"
+    #define BUTTON4_DESC          "Emergency stop 2"  // Optional string to set the LCD status
   #endif
 #endif
 
