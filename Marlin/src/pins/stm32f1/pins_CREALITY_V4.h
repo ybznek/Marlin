@@ -71,9 +71,13 @@
 // Limit Switches
 //
 #define X_STOP_PIN                          PA5
-#define Y_STOP_PIN                          PA6
+#define X_STOP_PIN_PREV                          0
+
+#define Y_STOP_PIN                          0
+#define Y_STOP_PIN_PREV                     PA6
+
 #define Z_STOP_PIN                          0
-#define Z_STOP_PIN_PREV                          PA7
+#define Z_STOP_PIN_PREV                     PA7
 
 #ifndef Z_MIN_PROBE_PIN
   #define Z_MIN_PROBE_PIN                   PB1   // BLTouch IN
@@ -142,8 +146,10 @@
 #define HEATER_BED_PIN                      PA2   // HOT BED
 
 #ifndef FAN_PIN
-  #define FAN_PIN                           PA0   // FAN
+  #define FAN_PIN                           0   // FAN
 #endif
+
+#define CONTROLLER_FAN_PIN                PA0 // previous FAN_PIN
 #if PIN_EXISTS(FAN)
   #define FAN_SOFT_PWM
 #endif
