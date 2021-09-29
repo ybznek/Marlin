@@ -3813,12 +3813,20 @@
     #define BUTTON3_DESC          "Baby -"
   #endif
 
-   #define BUTTON4_PIN FIL_RINOUT_PIN_PREV
+  #define BUTTON4_PIN FIL_RINOUT_PIN_PREV
   #if PIN_EXISTS(BUTTON4)
     #define BUTTON4_HIT_STATE     LOW       // State of the triggered button. NC=LOW. NO=HIGH.
     #define BUTTON4_WHEN_PRINTING true     // Button allowed to trigger during printing?
-    #define BUTTON4_GCODE         "M290 Z-0.25"
-    #define BUTTON4_DESC          "Emergency stop 2"  // Optional string to set the LCD status
+    #define BUTTON4_GCODE         "M1220 C10"
+    #define BUTTON4_DESC          "Increase feedrate by 10%"  // Optional string to set the LCD status
+  #endif
+
+  //#define BUTTON5_PIN FIL_RINOUT_PIN_PREV
+  #if PIN_EXISTS(BUTTON5)
+    #define BUTTON5_HIT_STATE     LOW       // State of the triggered button. NC=LOW. NO=HIGH.
+    #define BUTTON5_WHEN_PRINTING true     // Button allowed to trigger during printing?
+    #define BUTTON5_GCODE         "M1220 C-10"
+    #define BUTTON5_DESC          "Decrease feedrate by 10%"  // Optional string to set the LCD status
   #endif
 #endif
 

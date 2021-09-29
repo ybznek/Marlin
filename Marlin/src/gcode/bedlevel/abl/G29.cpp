@@ -251,7 +251,23 @@ G29_TYPE GcodeSuite::G29() {
 
   #if ENABLED(AUTO_BED_LEVELING_3POINT)
     vector_3 points[3];
-    probe.get_three_points(points);
+    if (parser.seen_test('a')){
+      points[0].x = parser.floatval('a');
+      points[0].y = parser.floatval('b');
+      points[0].z = 0;
+
+      points[1].x = parser.floatval('c');
+      points[1].y = parser.floatval('d');
+      points[1].z = 0;
+
+      points[2].x = parser.floatval('e');
+      points[2].y = parser.floatval('f');
+      points[2].z = 0;
+    }
+    else
+    {
+      probe.get_three_points(points);
+    }
   #endif
 
   #if ENABLED(AUTO_BED_LEVELING_LINEAR)

@@ -76,9 +76,8 @@
 #define Y_STOP_PIN                          -1
 #define Y_STOP_PIN_PREV                     PA6
 
-#define Z_STOP_PIN                          -1
+#define Z_STOP_PIN                          PA7
 #define Z_STOP_PIN_PREV                     PA7
-
 //#ifndef Z_MIN_PROBE_PIN
 //  #define Z_MIN_PROBE_PIN                   PA7   // BLTouch IN
 //#endif
@@ -115,6 +114,7 @@
 #ifndef Z_STEP_PIN
   #define Z_STEP_PIN                        PB6
 #endif
+
 #ifndef Z_DIR_PIN
   #define Z_DIR_PIN                         PB5
 #endif

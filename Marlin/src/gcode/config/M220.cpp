@@ -49,3 +49,15 @@ void GcodeSuite::M220() {
     SERIAL_EOL();
   }
 }
+
+void GcodeSuite::M1220() {
+  int16_t value = 0;
+  if (parser.seenval('C')) value = parser.value_int();
+  feedrate_percentage += value;
+
+  if (!parser.seen_any()) {
+    SERIAL_ECHOPAIR("FR:", feedrate_percentage);
+    SERIAL_CHAR('%');
+    SERIAL_EOL();
+  }
+}

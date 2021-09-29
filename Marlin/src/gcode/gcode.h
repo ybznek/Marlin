@@ -804,6 +804,7 @@ private:
   #endif
 
   static void M220();
+  static void M1220();
 
   #if HAS_EXTRUDERS
     static void M221();
