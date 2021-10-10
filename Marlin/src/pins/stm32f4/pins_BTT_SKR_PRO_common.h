@@ -56,7 +56,7 @@
 #define SERVO0_PIN                          PA1
 #define SERVO1_PIN                          PC9
 
-#define PS_ON_PIN							PF13
+#define PS_ON_PIN							PE0
 
 //
 // Trinamic Stallguard pins
